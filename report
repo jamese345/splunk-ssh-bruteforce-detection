@@ -1,0 +1,111 @@
+
+# SSH Brute Force Investigation Report
+
+## Executive Summary
+
+A review of SSH authentication logs identified a significant number of failed login attempts originating from multiple internal source hosts.
+
+Analysis revealed patterns consistent with SSH brute-force activity targeting several destination systems.
+
+No confirmed system compromise was identified; however, the volume of failed authentication attempts indicates elevated risk and warrants further monitoring.
+
+## Investigation Details
+
+### Data Source
+
+SSH Authentication Logs
+
+### Platform
+
+Splunk Enterprise 10.4
+
+### Time Range
+
+All Available Events
+
+### Total Events
+
+1,200
+
+## Event Breakdown
+
+| Event Type | Count |
+|------------|--------|
+| Failed SSH Login | 608 |
+| Successful SSH Login | 306 |
+| No Authentication | 286 |
+
+## Top Source IPs
+
+| Source IP | Failed Attempts |
+|------------|----------------|
+| 10.0.0.25 | 22 |
+| 10.0.0.46 | 20 |
+| 10.0.0.48 | 20 |
+| 10.0.0.21 | 19 |
+| 10.0.0.22 | 19 |
+
+
+## Top Destination IPs
+
+| Destination IP | Events |
+|---------------|--------|
+| 10.0.1.2 | 61 |
+| 10.0.1.9 | 57 |
+| 10.0.1.6 | 56 |
+| 10.0.1.10 | 55 |
+| 10.0.1.4 | 52 |
+
+
+## Indicators of Suspicious Activity
+
+- High volume of failed SSH authentications
+- Multiple source systems targeting multiple destinations
+- Repeated authentication attempts
+- Evidence of password guessing activity
+
+## MITRE ATT&CK Mapping
+
+### T1110 – Brute Force
+
+Adversaries may attempt to gain access through repeated password attempts.
+
+### T1021.004 – SSH
+
+SSH used as a remote access protocol and attack vector.
+
+## Risk Assessment
+
+Risk Level: Medium
+
+Likelihood: High
+
+Impact: Medium
+
+Reason:
+
+Repeated authentication failures indicate active attack attempts against SSH-enabled systems.
+
+## Recommendations
+
+### Immediate Actions
+
+- Review source hosts generating failed logins.
+- Validate whether activity is authorized.
+- Investigate targeted destination hosts.
+
+### Preventive Controls
+
+- Enable MFA.
+- Enforce strong password policies.
+- Configure account lockout thresholds.
+- Deploy Fail2Ban.
+- Restrict SSH access using firewall rules.
+
+---
+
+## Conclusion
+
+The investigation identified multiple indicators of SSH brute-force activity within the environment.
+
+Although no successful compromise was confirmed, the observed authentication failures demonstrate attack behavior that should be continuously monitored and mitigated through improved authentication controls and security monitoring.
