@@ -63,13 +63,17 @@ index="ssh_logs" auth_success="false"
 
 ## Findings
 
-![Top attacking source IPs](Screenshots/Dashboard for top source_IP.png)
+![Top source IPs](Screenshots/Top%20Source_ip.png)
 *Top source IPs by failed SSH login count, isolating the brute-force candidates.*
 
-![Brute-force alert dashboard](Screenshots/SSH brute force attack.png)
-*Dashboard view of hosts crossing the failure threshold, used to drive the investigation.*
+![SSH brute force attack](Screenshots/SSH%20brute%20force%20attack.png)
+*The brute-force pattern surfaced by the detection query.*
 
-*(Replace the two lines above with your actual screenshot filenames from the `Screenshots/` folder.)*
+![Dashboard for top source IP](Screenshots/Dashboard%20fot%20top%20source_IP.png)
+*Dashboard visualizing the top attacking source IPs over time.*
+
+![Dashboard for top destination IP](Screenshots/Dashboard%20for%20Top%20Destination_IP.png)
+*Dashboard visualizing the most targeted destination hosts.*
 
 - Identified a small set of source IPs responsible for the majority of failed authentication attempts — consistent with automated brute-forcing rather than legitimate user error.
 - Confirmed no successful authentications originated from the flagged source IPs, indicating the attack was contained at the authentication layer.
@@ -94,3 +98,4 @@ Detecting these patterns early — rather than after a successful login — redu
 
 ---
 *Part of my hands-on SOC analyst project portfolio — see my [profile README](https://github.com/jamese345) for more.*
+
