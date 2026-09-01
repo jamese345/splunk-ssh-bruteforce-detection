@@ -63,10 +63,10 @@ index="ssh_logs" auth_success="false"
 
 ## Findings
 
-![Top attacking source IPs](Screenshots/top_source_ips.png)
+![Top attacking source IPs](Screenshots/Dashboard fot top source_IP.png)
 *Top source IPs by failed SSH login count, isolating the brute-force candidates.*
 
-![Brute-force alert dashboard](Screenshots/bruteforce_dashboard.png)
+![Brute-force alert dashboard](Screenshots/SSH brute force attack.png)
 *Dashboard view of hosts crossing the failure threshold, used to drive the investigation.*
 
 *(Replace the two lines above with your actual screenshot filenames from the `Screenshots/` folder.)*
