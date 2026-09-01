@@ -63,7 +63,7 @@ index="ssh_logs" auth_success="false"
 
 ## Findings
 
-![Top attacking source IPs](Screenshots/Dashboard fot top source_IP.png)
+![Top attacking source IPs](Screenshots/Dashboard for top source_IP.png)
 *Top source IPs by failed SSH login count, isolating the brute-force candidates.*
 
 ![Brute-force alert dashboard](Screenshots/SSH brute force attack.png)
